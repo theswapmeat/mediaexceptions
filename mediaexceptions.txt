@@ -8,6 +8,3 @@ server=/disneyplus.com/bamgrid.com/bam.nr-data.net/cdn.registerdisney.go.com/cws
 server=/disneyplus.com/bamgrid.com/bam.nr-data.net/cdn.registerdisney.go.com/cws.conviva.com/d9.flashtalking.com/disney-portal.my.onetrust.com/disneyplus.bn5x.net/js-agent.newrelic.com/disney-plus.net/dssott.com/adobedtm.com/3.10.65.124
 server=/hotstar.com/52.29.2.17
 server=/hotstar.com/3.10.65.124
-
-
-
