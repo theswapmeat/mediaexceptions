@@ -1,3 +1,7 @@
+server=/gitv.tv/iqiyipic.com/qy.net/xunlei.com/b-ch.com/bbci.co.uk/bbc.net.uk/llnwi.net/52.29.2.17
+server=/gitv.tv/iqiyipic.com/qy.net/xunlei.com/b-ch.com/bbci.co.uk/bbc.net.uk/llnwi.net/3.10.65.124
+server=/radioplayer.co.uk/bbctvapps.co.uk/2cnt.net/at-o.net/irdeto.com/com.home/channel4.com/maxymiser.net/52.29.2.17
+server=/radioplayer.co.uk/bbctvapps.co.uk/2cnt.net/at-o.net/irdeto.com/com.home/channel4.com/maxymiser.net/3.10.65.124
 server=/netflix.com/nflxext.com/nflximg.com/nflximg.net/nflxso.net/nflxvideo.net/52.29.2.17
 server=/netflix.com/nflxext.com/nflximg.com/nflximg.net/nflxso.net/nflxvideo.net/3.10.65.124
 server=/aiv-cdn.net/aiv-cdn.net.c.footprint.net/aiv-delivery.net/amazonvideo.com/atv-ext.amazon.com/atv-ps.amazon.com/d25xi40x97liuc.cloudfront.net/dmqdd6hw24ucf.cloudfront.net/media-amazon.com/primevideo.com/52.29.2.17
