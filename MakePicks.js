@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import supabase from "../utils/supabase";
-import { groupByKey } from "../utils/helpers";
 import { useAuth } from "../contexts/Auth";
 
 const fetchFixtures = async (key, page) => {
@@ -14,41 +13,35 @@ const fetchFixtures = async (key, page) => {
 };
 
 const MakePicks = () => {
-  const [hometeamscore, setHometeamscore] = useState(null);
-  const [awayteamscore, setAwayteamscore] = useState(null);
   const { user } = useAuth();
-  var picks = [];
-  var groupedFixtures = [];
   const { data, status } = useQuery(["matches"], fetchFixtures);
-
-  if (status === "success") {
-    data.map((data) =>
-      picks.push({
-        id: data.id,
-        hometeamscore: null,
-        awayteamscore: null,
-        userid: user.id,
-      })
-    );
-
-    var fixtures = groupByKey(data, "matchdate", { omitKey: true });
-
-    for (const [date, matches] of Object.entries(fixtures)) {
-      groupedFixtures.push({ date, matches });
+  const holdingArray = [];
+  const [picks, setPicks] = useState(() => {
+    if (status === "success" && data.length > 0) {
+      for (let i = 0; i < data.length; i++) {
+        holdingArray[i] = {
+          matchid: null,
+          userid: null,
+          hometeamscore: null,
+          awayteamscore: null,
+        };
+      }
     }
-  }
+    return holdingArray;
+  });
 
-  const handleUpdatePick = (id, homescore, awayscore) => {
-    const objIndex = picks.findIndex((obj) => obj.id === id);
-    picks[objIndex].hometeamscore = homescore;
-    picks[objIndex].awayteamscore = awayscore;
-    console.log(picks)
+  const handleChange = (index, event, id) => {
+    const predictions = [...picks];
+    predictions[index]["matchid"] = id;
+    predictions[index]["userid"] = user.id;
+    predictions[index][event.target.name] = event.target.value;
+    setPicks(predictions);
+    console.log(picks);
   };
 
   return (
     <div>
       <h2>Enter your picks</h2>
-
       {status === "loading" && <p>Loading your picks...</p>}
 
       {status === "error" && <p>Error fetching your picks...</p>}
@@ -56,37 +49,31 @@ const MakePicks = () => {
       {status === "success" && (
         <>
           <div>
-            {groupedFixtures.map((fixture) => (
-              <div className="card" key={fixture.date}>
-                <h4>{new Date(fixture.date).toDateString()}</h4>
-                {fixture.matches.map((match) => (
-                  <div key={match.id}>
-                    {match.hometeamname.name}
-                    <input
-                      type="text"
-                      onChange={(e) => {
-                        setHometeamscore(e.target.value);
-                        handleUpdatePick(
-                          match.id,
-                          e.target.value,
-                          awayteamscore
-                        );
-                      }}
-                    ></input>
-                    vs {match.awayteamname.name}
-                    <input
-                      type="text"
-                      onChange={(e) => {
-                        setAwayteamscore(e.target.value);
-                        handleUpdatePick(
-                          match.id,
-                          hometeamscore,
-                          e.target.value
-                        );
-                      }}
-                    ></input>
-                  </div>
-                ))}
+            {data.map((fixture, index) => (
+              <div className="card" key={fixture.id}>
+                <h4>{new Date(fixture.matchdate).toDateString()}</h4>
+                <div className="form-group" key={fixture.id}>
+                  <p>
+                    Match ID {fixture.id} {fixture.hometeamname.name} vs{" "}
+                    {fixture.awayteamname.name}
+                  </p>
+                  <input
+                    name="hometeamscore"
+                    className="form-control"
+                    type="text"
+                    onChange={(e) => {
+                      handleChange(index, e, fixture.id);
+                    }}
+                  ></input>
+                  <input
+                    name="awayteamscore"
+                    className="form-control"
+                    type="text"
+                    onChange={(e) => {
+                      handleChange(index, e, fixture.id);
+                    }}
+                  ></input>
+                </div>
               </div>
             ))}
           </div>
