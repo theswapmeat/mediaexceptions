@@ -269,5 +269,5 @@ server=/hses3.akamaized.net/3.10.65.124
 server=/cf-images.ap-southeast-1.prod.boltdns.net/3.10.65.124
 server=/hshlsnews14-i.akamaihd.net/3.10.65.124
 server=/hsnewsprepack.akamaized.net/3.10.65.124
-server=/conviva.com/52.29.2.17
-server=/conviva.com/3.10.65.124
+server=/conviva.com/es.pn/espncdn.com/espn.com/espncricinfo.com/espn.net/52.29.2.17
+server=/conviva.com/es.pn/espncdn.com/espn.com/espncricinfo.com/espn.net/3.10.65.124
