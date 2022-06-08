@@ -271,5 +271,3 @@ server=/hshlsnews14-i.akamaihd.net/3.10.65.124
 server=/hsnewsprepack.akamaized.net/3.10.65.124
 server=/conviva.com/52.29.2.17
 server=/conviva.com/3.10.65.124
-server=/bamgrid.com/52.29.2.17
-server=/bamgrid.com/3.10.65.124
