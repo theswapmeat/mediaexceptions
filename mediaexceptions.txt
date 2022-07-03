@@ -285,3 +285,5 @@ server=/recapiv3.voot.com/pxapi.voot.com/cs.voot.com/vootvideo.akamaized.net/3.1
 server=/psapi.voot.com/us-central1-vootdev-stg.cloudfunctions.net/3.10.65.124
 server=/voting.voot.com/voting-api.voot.com/recapiv3-jio.voot.com/3.10.65.124
 server=/vootapi.media.jio.com/userauth.voot.com/vootdash.cdn.jio.com/3.10.65.124
+server=/apple.com/tv.apple.com/tv.g.apple.com/tv.v.aaplimg.com/52.29.2.17
+server=/apple.com/tv.apple.com/tv.g.apple.com/tv.v.aaplimg.com/3.10.65.124
